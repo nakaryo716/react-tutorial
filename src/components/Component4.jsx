@@ -3,7 +3,7 @@ import { memo } from "react";
 export const Component4 = memo(() => {
     const style = {
         backgroundColor: "green",
-        height: "10px",
+        height: "300px",
     };
 
     console.log("Called Component4");

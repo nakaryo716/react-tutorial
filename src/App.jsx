@@ -1,15 +1,19 @@
-import { useState } from "react";
+import { memo, useCallback, useState } from "react";
 import { ColoredMessage } from "./components/ColoredMessage";
 import { CssModules } from "./components/CssModule";
 import { Component1 } from "./components/Component1";
 import { Component4 } from "./components/Component4";
 
-export const App = () => {
+export const App = memo(() => {
   const [num, setNum] = useState(0);
 
   const onClickButton = () => {
     setNum((prev) => prev + 1);
   };
+
+  const onClickReset = useCallback(() => {
+    setNum(0);
+  }, []);
 
   return (
     <>
@@ -20,8 +24,8 @@ export const App = () => {
       <p>{num}</p>
       <CssModules/>
 
-      <Component1/>
+      <Component1 onClickReset={onClickReset}/>
       <Component4/>
     </>
   );
-};
+});
