@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { ColoredMessage } from "./components/ColoredMessage";
 import { CssModules } from "./components/CssModule";
+import { Component1 } from "./components/Component1";
+import { Component4 } from "./components/Component4";
 
 export const App = () => {
   const [num, setNum] = useState(0);
@@ -17,6 +19,9 @@ export const App = () => {
       <button onClick={onClickButton}>ボタン</button>
       <p>{num}</p>
       <CssModules/>
+
+      <Component1/>
+      <Component4/>
     </>
   );
 };
